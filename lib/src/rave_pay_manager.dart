@@ -19,8 +19,8 @@ class RavePayManager {
   @Deprecated(
       "'initilize' doesn't properly communicate the purpose of this function. Use the `prompt` function. Will be removed in version 1.0.0")
   Future<RaveResult> initialize({
-    @required BuildContext context,
-    @required RavePayInitializer initializer,
+    required BuildContext context,
+    required RavePayInitializer initializer,
   }) async {
     return prompt(context: context, initializer: initializer);
   }
@@ -37,8 +37,8 @@ class RavePayManager {
   /// Please, enable embedded_views_preview on iOS. See https://stackoverflow.com/a/55290868/6181476
   ///  {@endtemplate}
   Future<RaveResult> prompt({
-    @required BuildContext context,
-    @required RavePayInitializer initializer,
+    required BuildContext context,
+    required RavePayInitializer initializer,
   }) async {
     assert(context != null);
     assert(initializer != null);
@@ -64,7 +64,8 @@ class RavePayManager {
     );
 
     // Return a cancelled response if result is null
-    return result == null ? RaveResult(status: RaveStatus.cancelled) : result;
+    // ignore: unnecessary_null_comparison
+    return (result == null ? RaveResult(status: RaveStatus.cancelled) : result) as Future<RaveResult>;
   }
 
   ThemeData _getDefaultTheme(BuildContext context) {
