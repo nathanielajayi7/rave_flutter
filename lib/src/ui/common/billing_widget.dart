@@ -26,7 +26,8 @@ class _BillingWidgetState extends State<BillingWidget> {
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Form(
         key: _formKey,
-        autovalidate: _autoValidate,
+        
+        autovalidateMode: _autoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Column(
           children: <Widget>[
             Text(

@@ -52,7 +52,7 @@ class _OtpWidgetState extends State<OtpWidget> {
               ),
               autoFocus: true,
               inputFormatters: [
-                WhitelistingTextInputFormatter.digitsOnly,
+                FilteringTextInputFormatter.digitsOnly,
               ],
               obscureText: true,
               hintText: "OTP",
