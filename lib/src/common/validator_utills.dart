@@ -52,7 +52,7 @@ class ValidatorUtils {
     return RegExp(p).hasMatch(value);
   }
 
-  static bool isWholeNumberPositive(String value) {
+  static bool isWholeNumberPositive(String? value) {
     if (value == null) {
       return false;
     }
