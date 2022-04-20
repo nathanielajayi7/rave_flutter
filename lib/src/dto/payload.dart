@@ -109,7 +109,7 @@ class Payload {
       "txRef": txRef,
       "redirect_url": redirectUrl,
     };
-
+    
     putIfNotNull(map: json, key: "payment_type", value: paymentType);
     putIfNotNull(map: json, key: "expirymonth", value: expiryMonth);
     putIfNotNull(map: json, key: "expiryyear", value: expiryYear);
